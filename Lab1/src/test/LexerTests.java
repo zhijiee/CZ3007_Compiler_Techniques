@@ -83,6 +83,23 @@ public class LexerTests {
 				);
 	}
 
+	@Test
+	public void testIfElse(){
+		runtest("if(x==10) break; else break;",
+				new Token(IF, 0,0,"if"),
+				new Token(LPAREN, 0, 2, "("),
+				new Token(ID, 0,3,"x"),
+				new Token(EQEQ,0,4,"=="),
+				new Token(INT_LITERAL,0,6,"10"),
+				new Token(RPAREN, 0, 8, ")"),
+				new Token(BREAK, 0, 10, "break"),
+				new Token(SEMICOLON, 0, 15, ";"),
+				new Token(ELSE, 0, 17, "else"),
+				new Token(BREAK, 0, 22, "break"),
+				new Token(SEMICOLON, 0, 27, ";"),
+				new Token(EOF, 0, 28, "")
+				);
+	}
 	
 
 }
